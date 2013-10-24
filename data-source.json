@@ -1,0 +1,38 @@
+{
+  "db": {
+    "connector": "memory"
+  },
+  "push": {
+    "connector": "push"
+  },
+  "mail": {
+    "connector": "mail"
+  },
+  "mongodb": {
+    "connector": "mongodb",
+    "url": "mongo://{{app.host}}:24017/{{app.name}}"
+  },
+  "maps": {
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": ["street", "city", "zipcode"]
+        }
+      }
+      ]}
+    }
+  }
