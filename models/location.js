@@ -2,9 +2,9 @@
  * Location Model
  */
 
-var project = require('../project');
-var Location = project.models.Location;
-var maps = project.dataSources.maps;
+var app = require('../app');
+var Location = app.models.Location;
+var maps = app.dataSources.maps;
 
 /**
  * Find nearby locations.
