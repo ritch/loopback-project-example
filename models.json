@@ -2,7 +2,7 @@
   "customer": {
     "options": {
       "extends": "User",
-      "data-source": "{{process.env.DB || 'db'}}"
+      "dataSource": "{{process.env.DB || 'db'}}"
     },
     "properties": {
       "id": {
@@ -23,7 +23,7 @@
     }
   },
   "location": {
-    "has-many": "inventory",
+    "has-many": {"model": "Inventory", "foreignKey": "locationId", "as": "inventory"},
     "remote-methods": {
       "nearby": {
         "description": "Find nearby locations around the geo point",
@@ -45,7 +45,7 @@
   "inventory": {
     "options": {
       "plural": "inventory",
-      "data-source": "{{process.env.DB || 'db'}}"
+      "dataSource": "{{process.env.DB || 'db'}}"
     },
     "properties": {
       "id": {
