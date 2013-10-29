@@ -1,13 +1,4 @@
 {
   "port": "{{process.env.PORT || 3000}}",
-  "host": "foo.bar.com",
-  "middleware": [
-    ["static", "{{__dirname}}/public"],
-    "crsf",
-    "gzip",
-    "json",
-    "logger",
-    "rest",
-    ["errorHandler", {"template": "{{__dirname}}/errors.html"}]
-  ]
+  "host": "foo.bar.com"
 }
