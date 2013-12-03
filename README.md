@@ -1,4 +1,4 @@
-loopback-project-example
+loopback-app-example
 ========================
 
-An example loopback app using a new project runner api.
+An example loopback 1.2 app.

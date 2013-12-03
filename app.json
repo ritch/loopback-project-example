@@ -1,0 +1,4 @@
+{
+  "port": "{{process.env.PORT || 3000}}",
+  "host": "foo.bar.com"
+}
